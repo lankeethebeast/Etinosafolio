@@ -162,7 +162,7 @@ const handleForm = () => {
             btn.textContent = 'Sending...';
 
             // Replace these with your actual Service ID and Template ID
-            const serviceID = 'YOUR_SERVICE_ID';
+            const serviceID = 'service_wner2ge';
             const templateID = 'YOUR_TEMPLATE_ID';
 
             emailjs.sendForm(serviceID, templateID, form)
