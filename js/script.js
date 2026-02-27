@@ -163,7 +163,7 @@ const handleForm = () => {
 
             // Replace these with your actual Service ID and Template ID
             const serviceID = 'service_wner2ge';
-            const templateID = 'YOUR_TEMPLATE_ID';
+            const templateID = 'template_v0gc4gt';
 
             emailjs.sendForm(serviceID, templateID, form)
                 .then(() => {
