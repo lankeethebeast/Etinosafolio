@@ -12,9 +12,11 @@ A premium portfolio website for Onaifo Etinosa Favour (Lxnkee), a Full Stack Dev
 ```text
 .
 ├── assets/
+│   ├── docs/        # Public documents (e.g., Resume)
 │   └── images/      # Project images and profile photos
 ├── css/
 │   └── styles.css   # Main stylesheet
+├── docs/            # Private project documentation/source files
 ├── js/
 │   └── script.js    # Interactivity and logic
 ├── index.html       # Entry point
