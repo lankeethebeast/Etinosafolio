@@ -7,14 +7,29 @@
     --text-muted: #a0a0a0;
     --glass: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
+    --nav-bg: rgba(10, 10, 12, 0.8);
     --font-main: 'Outfit', sans-serif;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="light"] {
+    --dark: #f8f9fa;
+    --darker: #ffffff;
+    --text: #1a1a1a;
+    --text-muted: #666666;
+    --glass: rgba(0, 0, 0, 0.03);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --nav-bg: rgba(248, 249, 250, 0.8);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -30,7 +45,7 @@
     width: 100%;
     z-index: 1000;
     padding: 1.5rem 0;
-    background: rgba(10, 10, 12, 0.8);
+    background: var(--nav-bg);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--glass-border);
 }
@@ -69,6 +84,48 @@
 
 .nav-links a:hover {
     color: var(--primary);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: var(--text);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-left: 1.5rem;
+}
+
+.theme-toggle:hover {
+    background: var(--glass-border);
+    transform: scale(1.1);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+}
+
+.sun-icon {
+    display: none;
+}
+
+.moon-icon {
+    display: block;
+}
+
+[data-theme="light"] .sun-icon {
+    display: block;
+}
+
+[data-theme="light"] .moon-icon {
+    display: none;
 }
 
 /* Hero Section */

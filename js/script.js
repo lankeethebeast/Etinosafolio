@@ -1,4 +1,34 @@
 
+// --- Theme Toggle ---
+const initTheme = () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const storageKey = 'theme-preference';
+
+    const getTheme = () => {
+        if (localStorage.getItem(storageKey)) {
+            return localStorage.getItem(storageKey);
+        }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+
+    let currentTheme = getTheme();
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+        currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        localStorage.setItem(storageKey, currentTheme);
+    });
+
+    // Listen for system changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem(storageKey)) {
+            currentTheme = e.matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+        }
+    });
+};
+
 // --- Magnetic Effect ---
 const initMagnetic = () => {
     const magnets = document.querySelectorAll('.magnetic');
@@ -160,6 +190,7 @@ const initSmoothScroll = () => {
 // Initialize All
 document.addEventListener('DOMContentLoaded', () => {
     addAnimationStyles();
+    initTheme();
     initMagnetic();
     initTilt();
     initTyping();
