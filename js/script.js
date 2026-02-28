@@ -29,6 +29,29 @@ const initTheme = () => {
     });
 };
 
+// --- Mobile Menu ---
+const initMobileMenu = () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+    }
+};
+
 // --- Magnetic Effect ---
 const initMagnetic = () => {
     const magnets = document.querySelectorAll('.magnetic');
@@ -191,6 +214,7 @@ const initSmoothScroll = () => {
 document.addEventListener('DOMContentLoaded', () => {
     addAnimationStyles();
     initTheme();
+    initMobileMenu();
     initMagnetic();
     initTilt();
     initTyping();
