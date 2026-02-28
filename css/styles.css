@@ -4,13 +4,16 @@
     --secondary: #38bdf8;
     /* Professional Sky Blue */
     --accent: #818cf8;
-    --dark: #0a0a0c;
-    --darker: #050505;
-    --text: #e2e8f0;
-    --text-muted: #94a3b8;
-    --glass: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --nav-bg: rgba(10, 10, 12, 0.85);
+    --dark: #020203;
+    /* OLED Black depth */
+    --darker: #000000;
+    /* True Black */
+    --text: #cfd8e3;
+    /* Softer Slate White */
+    --text-muted: #8492a6;
+    --glass: rgba(255, 255, 255, 0.02);
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --nav-bg: rgba(0, 0, 0, 0.85);
     --font-main: 'Outfit', sans-serif;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
