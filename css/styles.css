@@ -1,25 +1,28 @@
 :root {
-    --primary: #00f2fe;
-    --secondary: #4facfe;
+    --primary: #6366f1;
+    /* Modern Indigo */
+    --secondary: #38bdf8;
+    /* Professional Sky Blue */
+    --accent: #818cf8;
     --dark: #0a0a0c;
     --darker: #050505;
-    --text: #e0e0e0;
-    --text-muted: #a0a0a0;
-    --glass: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --nav-bg: rgba(10, 10, 12, 0.8);
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+    --glass: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --nav-bg: rgba(10, 10, 12, 0.85);
     --font-main: 'Outfit', sans-serif;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-theme="light"] {
-    --dark: #f8f9fa;
+    --dark: #f8fafc;
     --darker: #ffffff;
-    --text: #1a1a1a;
-    --text-muted: #666666;
-    --glass: rgba(0, 0, 0, 0.03);
-    --glass-border: rgba(0, 0, 0, 0.1);
-    --nav-bg: rgba(248, 249, 250, 0.8);
+    --text: #0f172a;
+    --text-muted: #64748b;
+    --glass: rgba(0, 0, 0, 0.02);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --nav-bg: rgba(248, 250, 252, 0.85);
 }
 
 * {
@@ -156,12 +159,12 @@ body {
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--primary);
-    box-shadow: 0 0 30px rgba(0, 242, 254, 0.3);
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-img:hover {
-    box-shadow: 0 0 50px rgba(0, 242, 254, 0.6);
+    box-shadow: 0 0 50px rgba(99, 102, 241, 0.4);
 }
 
 .badge {
@@ -351,7 +354,7 @@ section {
 
 .tags span {
     padding: 0.3rem 0.8rem;
-    background: rgba(0, 242, 254, 0.1);
+    background: rgba(99, 102, 241, 0.1);
     color: var(--primary);
     border-radius: 4px;
     font-size: 0.8rem;
