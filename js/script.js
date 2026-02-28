@@ -1,36 +1,3 @@
-// --- Custom Cursor ---
-const initCursor = () => {
-    const cursor = document.querySelector('.cursor');
-    const follower = document.querySelector('.cursor-follower');
-    let posX = 0, posY = 0;
-    let mouseX = 0, mouseY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-
-        cursor.style.left = `${mouseX}px`;
-        cursor.style.top = `${mouseY}px`;
-    });
-
-    const animateFollower = () => {
-        posX += (mouseX - posX) / 8;
-        posY += (mouseY - posY) / 8;
-
-        follower.style.left = `${posX - 20}px`;
-        follower.style.top = `${posY - 20}px`;
-
-        requestAnimationFrame(animateFollower);
-    };
-    animateFollower();
-
-    // Hover effect on interactable elements
-    const interactables = document.querySelectorAll('a, button, input, textarea, .project-card');
-    interactables.forEach(el => {
-        el.addEventListener('mouseenter', () => follower.classList.add('cursor-active'));
-        el.addEventListener('mouseleave', () => follower.classList.remove('cursor-active'));
-    });
-};
 
 // --- Magnetic Effect ---
 const initMagnetic = () => {
@@ -193,7 +160,6 @@ const initSmoothScroll = () => {
 // Initialize All
 document.addEventListener('DOMContentLoaded', () => {
     addAnimationStyles();
-    initCursor();
     initMagnetic();
     initTilt();
     initTyping();
